@@ -1,4 +1,10 @@
 import java.util.Scanner;
+\\2. Entrar via teclado com dez valores positivos. Consistir a digitação e enviar mensagem de
+\\erro, se necessário. Após a digitação, exibir:
+\\a. O maior valor;
+\\b. A soma dos valores;
+\\c. A média aritmética dos valores.
+\\Aluna Isabela Luisa CB3021599
 
 public class TP02Ex02 {
     public static void main(String[] args) {
