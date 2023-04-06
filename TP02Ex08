@@ -1,0 +1,55 @@
+\\8. Entrar via teclado com doze valores e armazená-los em uma matriz de ordem 3x4. Após a
+\\digitação dos valores solicitar uma constante multiplicativa, que deverá multiplicar cada
+\\valor matriz e armazenar o resultado em outra matriz de mesma ordem, nas posições
+\\correspondentes. Exibir as matrizes na tela, sob a forma matricial, ou seja, linhas por
+\\colunas.
+\\Aluna Isabela Luisa CB3021599
+
+import java.util.Scanner;
+
+public class TP02Ex08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        //criando a matriz 3x4
+        int[][] matriz1 = new int[3][4];
+
+        //lendo os valores da matriz 1
+        for(int i=0; i<3; i++) {
+            for(int j=0; j<4; j++) {
+                System.out.print("Digite o valor para a posição ["+i+"]["+j+"]: ");
+                matriz1[i][j] = sc.nextInt();
+            }
+        }
+
+        //lendo a constante multiplicativa
+        System.out.print("Digite a constante multiplicativa: ");
+        int constante = sc.nextInt();
+
+        //criando a matriz 2 que será a matriz resultante da multiplicação
+        int[][] matriz2 = new int[3][4];
+
+        //realizando a multiplicação dos valores da matriz 1 pela constante e armazenando na matriz 2
+        for(int i=0; i<3; i++) {
+            for(int j=0; j<4; j++) {
+                matriz2[i][j] = matriz1[i][j] * constante;
+            }
+        }
+
+        //exibindo as matrizes
+        System.out.println("Matriz 1:");
+        exibeMatriz(matriz1);
+        System.out.println("Matriz 2:");
+        exibeMatriz(matriz2);
+    }
+
+    //método para exibir a matriz na tela
+    public static void exibeMatriz(int[][] matriz) {
+        for(int i=0; i<matriz.length; i++) {
+            for(int j=0; j<matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
