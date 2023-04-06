@@ -1,5 +1,6 @@
 \\6. Armazenar seis nomes em uma matriz de ordem 2x3. Apresentar os nomes na tela.
-\\Aluna Isabela Luisa CB3021599
+\\Aluna Isabela Luisa 
+\\Aluno Ronald Pereira
 
 public class TP02Ex06 {
     public static void main(String[] args) {
