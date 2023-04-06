@@ -4,7 +4,8 @@ import java.util.Scanner;
 \\a. O maior valor;
 \\b. A soma dos valores;
 \\c. A média aritmética dos valores.
-\\Aluna Isabela Luisa CB3021599
+\\Aluna Isabela Luisa 
+\\Aluno Ronald Pereira
 
 public class TP02Ex02 {
     public static void main(String[] args) {
