@@ -1,19 +1,47 @@
+import java.util.Scanner;
+
 public class TP02Ex03 {
     public static void main(String[] args) {
-        int[][] matriz = new int[2][3];
+        Scanner sc = new Scanner(System.in);
+        int quantidadeValores;
+        int maiorValor = Integer.MIN_VALUE;
+        int menorValor = Integer.MAX_VALUE;
+        int soma = 0;
+        int quantidadeValoresPositivos = 0;
+        int quantidadeValoresNegativos = 0;
 
-        matriz[0][0] = 1;
-        matriz[0][1] = 2;
-        matriz[0][2] = 3;
-        matriz[1][0] = 4;
-        matriz[1][1] = 5;
-        matriz[1][2] = 6;
-
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(matriz[i][j] + " ");
+        do {
+            System.out.print("Digite a quantidade de valores (deve ser positiva e menor que 20): ");
+            quantidadeValores = sc.nextInt();
+            if (quantidadeValores <= 0 || quantidadeValores >= 20) {
+                System.out.println("Quantidade inválida. Digite novamente.");
             }
-            System.out.println();
+        } while (quantidadeValores <= 0 || quantidadeValores >= 20);
+
+        for (int i = 1; i <= quantidadeValores; i++) {
+            System.out.print("Digite o " + i + "º valor: ");
+            int valor = sc.nextInt();
+            soma += valor;
+            if (valor > maiorValor) {
+                maiorValor = valor;
+            }
+            if (valor < menorValor) {
+                menorValor = valor;
+            }
+            if (valor > 0) {
+                quantidadeValoresPositivos++;
+            } else if (valor < 0) {
+                quantidadeValoresNegativos++;
+            }
         }
-    }
+
+        double media = (double) soma / quantidadeValores;
+        double porcentagemValoresPositivos = (double) quantidadeValoresPositivos / quantidadeValores * 100;
+        double porcentagemValoresNegativos = (double) quantidadeValoresNegativos / quantidadeValores * 100;
+
+        System.out.println("Maior valor: " + maiorValor);
+        System.out.println("Menor valor: " + menorValor);
+        System.out.println("Soma dos valores: " + soma);
+        System.out.println("Média aritmética dos valores: " + media);
+ }      
 }
