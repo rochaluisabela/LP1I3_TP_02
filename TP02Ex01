@@ -1,7 +1,8 @@
 import java.util.Scanner;
 \\1. Entrar com dois valores via teclado, onde o segundo valor deverá ser maior que o primeiro.
 Caso contrário solicitar novamente apenas o segundo valor.
-\\Aluna Isabela Luisa CB3021599
+\\Aluna Isabela Luisa 
+\\Aluno Ronald Pereira
 
 public class TP02Ex01 {
     public static void main(String[] args) {
