@@ -3,17 +3,17 @@
 
 public class TP02Ex06 {
     public static void main(String[] args) {
-        int[][] matriz = new int[3][2];
+        String[][] matriz = new String[2][3];
 
-        matriz[0][0] = 1;
-        matriz[0][1] = 2;
-        matriz[1][0] = 3;
-        matriz[1][1] = 4;
-        matriz[2][0] = 5;
-        matriz[2][1] = 6;
+        matriz[0][0] = "Pedro";
+        matriz[0][1] = "Jorge";
+        matriz[0][2] = "Michael";
+        matriz[1][0] = "Jackson";
+        matriz[1][1] = "Paula";
+        matriz[1][2] = "Maria";
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 2; j++) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
                 System.out.print(matriz[i][j] + " ");
             }
             System.out.println();
