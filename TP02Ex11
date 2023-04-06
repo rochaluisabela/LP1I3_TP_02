@@ -1,0 +1,81 @@
+\\11. Entrar com uma matriz de ordem MxM, onde a ordem também será escolhida pelo usuário,
+\\sendo que no máximo será de ordem 10 e quadrática. Após a digitação dos elementos,
+\\calcular e exibir determinante da matriz.
+\\Aluna Isabela Luisa 
+\\Aluno Ronald Pereira
+
+import java.util.Scanner;
+
+public class TP02Ex11 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        // Solicita ao usuário a ordem da matriz
+        System.out.print("Digite a ordem da matriz quadrática (MxM): ");
+        int m = input.nextInt();
+        
+        // Cria a matriz com a ordem informada pelo usuário
+        double[][] matriz = new double[m][m];
+        
+        // Solicita ao usuário os valores da matriz
+        System.out.println("Digite os valores da matriz:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.printf("[%d][%d]: ", i, j);
+                matriz[i][j] = input.nextDouble();
+            }
+        }
+        
+        // Exibe a matriz informada pelo usuário
+        System.out.println("Matriz informada:");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        // Calcula o determinante da matriz usando a regra de Laplace
+        double determinante = calculaDeterminante(matriz);
+        
+        // Exibe o determinante da matriz
+        System.out.printf("Determinante da matriz: %.2f", determinante);
+        
+        input.close();
+    }
+    
+    // Função para calcular o determinante de uma matriz usando a regra de Laplace
+    public static double calculaDeterminante(double[][] matriz) {
+        int ordem = matriz.length;
+        double determinante = 0;
+        
+        if (ordem == 1) { // Caso base (matriz de ordem 1)
+            determinante = matriz[0][0];
+        } else if (ordem == 2) { // Caso base (matriz de ordem 2)
+            determinante = matriz[0][0]*matriz[1][1] - matriz[0][1]*matriz[1][0];
+        } else { // Caso geral (matriz de ordem maior que 2)
+            for (int j = 0; j < ordem; j++) {
+                double[][] submatriz = new double[ordem-1][ordem-1];
+                
+                // Cria a submatriz eliminando a primeira linha e a coluna j
+                for (int i = 1; i < ordem; i++) {
+                    for (int k = 0; k < ordem; k++) {
+                        if (k < j) {
+                            submatriz[i-1][k] = matriz[i][k];
+                        } else if (k > j) {
+                            submatriz[i-1][k-1] = matriz[i][k];
+                        }
+                    }
+                }
+                
+                // Calcula o cofator
+                double cofator = Math.pow(-1, j+2)*matriz[0][j]*calculaDeterminante(submatriz);
+                
+                // Soma os cofatores
+                determinante += cofator;
+            }
+        }
+        
+        return determinante;
+    }
+}
