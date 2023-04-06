@@ -3,7 +3,8 @@
 \\valor matriz e armazenar o resultado em outra matriz de mesma ordem, nas posições
 \\correspondentes. Exibir as matrizes na tela, sob a forma matricial, ou seja, linhas por
 \\colunas.
-\\Aluna Isabela Luisa CB3021599
+\\Aluna Isabela Luisa 
+\\Aluno Ronald Pereira
 
 import java.util.Scanner;
 
